@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>📂 YIA Case Archive</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YIA Case Archive</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>📂 YIA Case Archive</h1>
-    <p>Declassified Reports. Public Record Only.</p>
+    <h1>Case Archive</h1>
+    <input type="text" id="searchInput" placeholder="Search by case ID or type" />
+    <button onclick="filterLogs()">Filter</button>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="case-archive.html">Case Archive</a>
-    <a href="sops.html">Protocols</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdw7p1y0zh58JANkQzM6sD7Aq6gwlmDoLXlRvHjrbiwtEQ5gQ/viewform" target="_blank">File Report</a>
-  </nav>
-
-  <main class="logs">
-    <div id="logList">Loading archived cases...</div>
+  <main id="logContainer">
+    <!-- Logs will load here -->
   </main>
 
-  <footer>
-    <p>© 2025 YIA Public Intelligence Division</p>
-  </footer>
+  <!-- Embedded case data -->
+  <script id="log-data" type="application/json">
+[
+  {
+    "case_id": "YIA-202-001",
+    "type": "Bullying",
+    "date": "2025-07-17",
+    "location": "3rd Floor Stairwell",
+    "summary": "Reported shove between students. Witness confirmed. Resolved with guidance.",
+    "status": "Resolved"
+  },
+  {
+    "case_id": "YIA-202-002",
+    "type": "Vandalism",
+    "date": "2025-07-19",
+    "location": "Science Lab",
+    "summary": "Graffiti found on lab doors. Investigation ongoing.",
+    "status": "Ongoing"
+  },
+  {
+    "case_id": "YIA-001-004",
+    "type": "CyberBullying",
+    "date": "2025-02-22",
+    "location": "N/A",
+    "summary": "Disturbing text messages sent to victim.",
+    "status": "Under Investigation"
+  }
+]
+  </script>
 
   <script src="archive.js"></script>
 </body>
