@@ -4,49 +4,95 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>YIA Case Archive</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 1em;
+      background-color: #f4f4f9;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .case {
+      background: #ffffff;
+      border-left: 5px solid #3498db;
+      padding: 1em;
+      margin-bottom: 1em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .case strong {
+      display: inline-block;
+      width: 120px;
+      color: #34495e;
+    }
+    .search {
+      margin: 1em 0;
+      text-align: center;
+    }
+    .search input {
+      padding: 0.5em;
+      width: 80%;
+      max-width: 400px;
+      font-size: 1em;
+    }
+    @media (max-width: 600px) {
+      .case strong {
+        width: 100px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Case Archive</h1>
-    <input type="text" id="searchInput" placeholder="Search by case ID or type" />
-    <button onclick="filterLogs()">Filter</button>
-  </header>
+  <h1>🕵️‍♂️ YIA Case Archive</h1>
 
-  <main id="logContainer">
-    <!-- Logs will load here -->
-  </main>
+  <div class="search">
+    <input type="text" id="searchBar" placeholder="Search case ID, type, or location...">
+  </div>
 
-  <!-- Embedded case data -->
-  <script id="log-data" type="application/json">
-[
-  {
-    "case_id": "YIA-202-001",
-    "type": "Bullying",
-    "date": "2025-07-17",
-    "location": "3rd Floor Stairwell",
-    "summary": "Reported shove between students. Witness confirmed. Resolved with guidance.",
-    "status": "Resolved"
-  },
-  {
-    "case_id": "YIA-202-002",
-    "type": "Vandalism",
-    "date": "2025-07-19",
-    "location": "Science Lab",
-    "summary": "Graffiti found on lab doors. Investigation ongoing.",
-    "status": "Ongoing"
-  },
-  {
-    "case_id": "YIA-001-004",
-    "type": "CyberBullying",
-    "date": "2025-02-22",
-    "location": "N/A",
-    "summary": "Disturbing text messages sent to victim.",
-    "status": "Under Investigation"
-  }
-]
+  <div id="caseContainer">
+    <!-- CASE 1 -->
+    <div class="case">
+      <p><strong>Case ID:</strong> YIA-202-001</p>
+      <p><strong>Type:</strong> Bullying</p>
+      <p><strong>Date:</strong> 2025-07-17</p>
+      <p><strong>Location:</strong> 3rd Floor Stairwell</p>
+      <p><strong>Summary:</strong> Reported shove between students. Witness confirmed. Resolved with guidance.</p>
+      <p><strong>Status:</strong> Resolved</p>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case">
+      <p><strong>Case ID:</strong> YIA-202-002</p>
+      <p><strong>Type:</strong> Vandalism</p>
+      <p><strong>Date:</strong> 2025-07-19</p>
+      <p><strong>Location:</strong> Science Lab</p>
+      <p><strong>Summary:</strong> Graffiti found on lab doors. Investigation ongoing.</p>
+      <p><strong>Status:</strong> Ongoing</p>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case">
+      <p><strong>Case ID:</strong> YIA-001-004</p>
+      <p><strong>Type:</strong> Cyberbullying</p>
+      <p><strong>Date:</strong> 2025-02-22</p>
+      <p><strong>Location:</strong> N/A</p>
+      <p><strong>Summary:</strong> Disturbing text messages sent to victim.</p>
+      <p><strong>Status:</strong> Under Investigation</p>
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('searchBar');
+    const cases = document.querySelectorAll('.case');
+
+    searchInput.addEventListener('input', function () {
+      const query = this.value.toLowerCase();
+      cases.forEach(c => {
+        c.style.display = c.innerText.toLowerCase().includes(query) ? 'block' : 'none';
+      });
+    });
   </script>
-
-  <script src="archive.js"></script>
 </body>
 </html>
