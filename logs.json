@@ -15,4 +15,11 @@
     "summary": "Graffiti found on lab doors. Investigation ongoing.",
     "status": "Ongoing"
   }
+  {
+    "case_id": "YIA-001-004",
+    "type": "CyberBullying",
+    "date": "2025-02-22",
+    "location": "N/A",
+    "summary": "Disturbing Text Mesages Sent To Victim",
+    "status": "Under Investigation"
 ]
