@@ -1,0 +1,18 @@
+[
+  {
+    "case_id": "YIA-202-001",
+    "type": "Bullying",
+    "date": "2025-07-17",
+    "location": "3rd Floor Stairwell",
+    "summary": "Reported shove between students. Witness confirmed. Resolved with guidance.",
+    "status": "Resolved"
+  },
+  {
+    "case_id": "YIA-202-002",
+    "type": "Vandalism",
+    "date": "2025-07-19",
+    "location": "Science Lab",
+    "summary": "Graffiti found on lab doors. Investigation ongoing.",
+    "status": "Ongoing"
+  }
+]
